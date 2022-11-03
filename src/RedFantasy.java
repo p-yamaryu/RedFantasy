@@ -37,26 +37,33 @@ public class RedFantasy {
         this.playerHistory[0] = this.playerHp;
         this.cpuHistory[0] = this.cpuHp;
 
-        initHistory();  
+        initPlayerHistory();
+        initCpuHistory();
     } 
 
-    public void initHistory(){
-        IntStream.range(0, this.playerHistory.length)
+    public void initPlayerHistory(){
+        IntStream.range(0,this.playerHistory.length)
             .forEach(i -> {
                 this.playerHistory[i] = -9999;
-                this.cpuHistory[i] = -9999; 
+        });
+    }
+
+    public void initCpuHistory(){
+        IntStream.range(0, this.cpuHistory.length)
+            .forEach(i -> {
+                this.cpuHistory[i] = -9999;
         });
     }
 
     public void initPlayerMonster() {
-        IntStream.of(this.playerMonsters)
+        IntStream.range(0, this.playerMonsters.length)
             .forEach(i -> {
                 this.playerMonsters[i] = -1;
-            });
+        });
     }
 
     public void initCpuMonster(){
-        IntStream.of(this.cpuMonsters)
+        IntStream.range(0, this.cpuMonsters.length)
             .forEach(i -> {
                 this.cpuMonsters[i] = -1;
         });
